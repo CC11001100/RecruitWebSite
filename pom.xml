@@ -1,0 +1,79 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>org.cc11001100.jfinal.study</groupId>
+	<artifactId>JFinalStudy</artifactId>
+	<packaging>war</packaging>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>JFinalStudy Maven Webapp</name>
+	<url>http://maven.apache.org</url>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>3.8.1</version>
+			<scope>test</scope>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jfinal</groupId>
+			<artifactId>jfinal</artifactId>
+			<version>3.0</version>
+		</dependency>
+
+		<!-- 使用JFinal的druid插件需要引入依赖的，这个并没有自动依赖， 可能是考虑到用户并不总是需要用到这个插件，所以由用户需要时自己去引入，其它插件如是 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid</artifactId>
+			<version>1.0.29</version>
+		</dependency>
+
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+			<version>6.0.6</version>
+		</dependency>
+
+		<!-- EhCache插件要用得到的 -->
+		<dependency>
+			<groupId>net.sf.ehcache</groupId>
+			<artifactId>ehcache</artifactId>
+			<version>2.10.3</version>
+		</dependency>
+
+		<!-- 配置日志 -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<!-- JFinal Event插件 -->
+		<dependency>
+			<groupId>net.dreamlu</groupId>
+			<artifactId>JFinal-event</artifactId>
+			<version>1.5.1</version>
+		</dependency>
+
+		<!-- JFinal发邮件插件 -->
+		<dependency>
+			<groupId>cn.fsdev</groupId>
+			<artifactId>jfinal-mail-plugin</artifactId>
+			<version>3.0</version>
+		</dependency>
+
+
+
+
+	</dependencies>
+
+	<build>
+		<finalName>JFinalStudy</finalName>
+	</build>
+
+</project>
