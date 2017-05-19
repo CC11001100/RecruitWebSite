@@ -1,9 +1,16 @@
 package org.cc11001100.jfinal.config;
 
-import org.cc11001100.jfinal.controller.FooController;
+import java.io.InputStream;
+
+import org.cc11001100.jfinal.controller.AdminController;
+import org.cc11001100.jfinal.controller.CommonController;
+import org.cc11001100.jfinal.controller.CompanyHrController;
+import org.cc11001100.jfinal.controller.FileController;
+import org.cc11001100.jfinal.controller.IndexController;
+import org.cc11001100.jfinal.controller.JobHunterController;
+import org.cc11001100.jfinal.controller.VisitorController;
 import org.cc11001100.jfinal.interceptor.ExceptionInterceptor;
-import org.cc11001100.jfinal.interceptor.FooInterceptor;
-import org.cc11001100.jfinal.route.FooRoutes;
+import org.cc11001100.jfinal.modle._MappingKit;
 
 import com.jfinal.config.Constants;
 import com.jfinal.config.Handlers;
@@ -11,6 +18,7 @@ import com.jfinal.config.Interceptors;
 import com.jfinal.config.JFinalConfig;
 import com.jfinal.config.Plugins;
 import com.jfinal.config.Routes;
+import com.jfinal.kit.PathKit;
 import com.jfinal.kit.Prop;
 import com.jfinal.kit.PropKit;
 import com.jfinal.log.Log4jLogFactory;
@@ -24,6 +32,7 @@ import com.jfinal.plugin.cron4j.Cron4jPlugin;
 import com.jfinal.plugin.druid.DruidPlugin;
 import com.jfinal.plugin.ehcache.EhCachePlugin;
 import com.jfinal.plugin.redis.RedisPlugin;
+import com.jfinal.render.ViewType;
 import com.jfinal.template.Engine;
 import com.jfplugin.mail.MailPlugin;
 
@@ -40,12 +49,20 @@ public class MyConfiguration extends JFinalConfig {
 	@Override
 	public void configConstant(Constants me) {
 		
+		Prop miscProp=PropKit.use("config/misc.properties");
+		
 		me.setDevMode(true);
+		
 		me.setLogFactory(new Log4jLogFactory());
 		
+		me.setBaseUploadPath(miscProp.get("defaultBaseUploadPath"));
+		me.setBaseDownloadPath(miscProp.get("defaultBaseDownloadPath"));
+		
+		me.setViewType(ViewType.JSP);
+		
 		/*设置错误对应页*/
-		me.setError404View("/error/404.html");
-		me.setError500View("/error/500.html");
+//		me.setError404View("/error/404.html");
+//		me.setError500View("/error/500.html");
 		
 	}
 
@@ -53,12 +70,20 @@ public class MyConfiguration extends JFinalConfig {
 	public void configRoute(Routes me) {
 
 		/*配置模块映射*/
-		me.add(new FooRoutes());
+//		me.add(new FooRoutes());
 		
 		/*配置映射，但最好是将映射按照模块划分*/
-		me.setBaseViewPath("/user");
-		me.add("/user", FooController.class);
-
+//		me.setBaseViewPath("/user");
+//		me.add("/user", FooController.class);
+		me.add("/", IndexController.class);
+		me.add("/admin", AdminController.class);
+		me.add("/common", CommonController.class);
+		me.add("/companyHr", CompanyHrController.class);
+		me.add("/jobHunter", JobHunterController.class);
+		me.add("/visitor", VisitorController.class);
+		me.add("/file", FileController.class);
+		
+		
 	}
 
 	@Override
@@ -70,12 +95,16 @@ public class MyConfiguration extends JFinalConfig {
 	public void configPlugin(Plugins me) {
 		
 		/*druid连接池*/
-		Prop jdbcProp=PropKit.use("config/jdbc.properties");
+		Prop jdbcProp=PropKit.use("/config/jdbc.properties");
 		DruidPlugin dp = new DruidPlugin(jdbcProp.get("mysql.url").trim(), jdbcProp.get("mysql.user").trim(), jdbcProp.get("mysql.passwd").trim(), jdbcProp.get("mysql.driver").trim());
 		me.add(dp);
 		
 		/*ORM插件*/ 
 		ActiveRecordPlugin arp = new ActiveRecordPlugin(dp);
+		arp.setContainerFactory(new PropertyNameContainerFactory());
+		/*设置sql模板位置*/
+		arp.setBaseSqlTemplatePath(PathKit.getRootClassPath());
+		arp.addSqlTemplate("/sqlTemplate/namespace.sql");
 		/*设置数据库的类型*/
 		arp.setDialect(new MysqlDialect());
 		/*配置O-R映射，不直接配置在这里，而是提取出去了*/
@@ -84,14 +113,14 @@ public class MyConfiguration extends JFinalConfig {
 		me.add(arp);
 		
 		/*配置EhCache缓存插件*/
-		me.add(new EhCachePlugin("config/ehcache.xml"));
+		me.add(new EhCachePlugin(getClassPathResource("/config/ehcache.xml")));
 
 		/*配置redis缓存插件*/
 		RedisPlugin bbsRedis = new RedisPlugin("bbs", "localhost");
 		me.add(bbsRedis);
 		
 		/*配置Cron插件*/
-		Cron4jPlugin cp=new Cron4jPlugin("config/cron.properties", "cronTask");
+		Cron4jPlugin cp=new Cron4jPlugin("/config/cron.properties", "cronTask");
 		me.add(cp);
 		
 		/*添加Event插件*/
@@ -109,7 +138,7 @@ public class MyConfiguration extends JFinalConfig {
 		me.add(eventPlugin);
 		
 		/*添加发送邮件插件*/
-		me.add(new MailPlugin(PropKit.use("config/mail.properties").getProperties()));
+		me.add(new MailPlugin(PropKit.use("/config/mail.properties").getProperties()));
 		
 	}
 
@@ -117,22 +146,22 @@ public class MyConfiguration extends JFinalConfig {
 	public void configInterceptor(Interceptors me) {
 		
 		/*配置事务拦截器，为匹配到的方法开启事务，这样比一个一个配置爽多啦，regex是正则匹配，不带regex的是全匹配*/
-		me.add(new TxByMethodRegex("(.*save.*|.*update.*)"));
-		me.add(new TxByMethods("save", "update"));
-		me.add(new TxByActionKeyRegex("/trans.*"));
-		me.add(new TxByActionKeys("/tx/save", "/tx/update"));
+//		me.add(new TxByMethodRegex("(.*save.*|.*update.*)"));
+//		me.add(new TxByMethods("save", "update"));
+//		me.add(new TxByActionKeyRegex("/trans.*"));
+//		me.add(new TxByActionKeys("/tx/save", "/tx/update"));
 		
 		/*普通拦截器示例*/
 		/*添加控制层全局拦截器*/ 
-		me.addGlobalActionInterceptor(new FooInterceptor());
+//		me.addGlobalActionInterceptor(new FooInterceptor());
 		/*添加业务层全局拦截器*/ 
-		me.addGlobalServiceInterceptor(new FooInterceptor());
+//		me.addGlobalServiceInterceptor(new FooInterceptor());
 		/*为兼容老版本保留的方法，功能与addGlobalActionInterceptor完全一样*/ 
-		me.add(new FooInterceptor());
+//		me.add(new FooInterceptor());
 		
 		/*配置全局异常拦截器*/
 		me.addGlobalActionInterceptor(new ExceptionInterceptor());
-		me.addGlobalServiceInterceptor(new ExceptionInterceptor());
+//		me.addGlobalServiceInterceptor(new ExceptionInterceptor());
 		
 	}
 
@@ -146,6 +175,16 @@ public class MyConfiguration extends JFinalConfig {
 		
 		/*在此进行预加载数据等操作*/
 		
+	}
+	
+	/**
+	 * 获取类路径下的资源
+	 * 
+	 * @param filepath
+	 * @return
+	 */
+	private InputStream getClassPathResource(String filepath){
+		return Thread.currentThread().getContextClassLoader().getResourceAsStream(filepath);
 	}
 
 }
