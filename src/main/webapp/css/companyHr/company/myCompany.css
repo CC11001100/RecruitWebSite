@@ -1,0 +1,34 @@
+/**
+ * 
+ * 查看我创建的公司页面用到的css文件
+ * 
+ */
+
+
+
+
+
+
+
+#companyList .job-name{
+	color:black;
+}
+#companyList .job-name:hover{
+	color:black;
+}
+
+#companyList tbody td{
+	height:30px;
+	line-height:30px;
+}
+
+
+
+
+
+
+
+
+
+
+

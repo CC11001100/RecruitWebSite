@@ -1,0 +1,55 @@
+/**
+ * 
+ * 消息页面用到的css文件
+ * 
+ * 
+ */
+
+
+
+
+.receive-time{
+	color:#CCC;
+}
+
+.unread{
+	content:"";
+	border-radius:50%;
+	background-color:#FD0002;
+	display:inline-block;
+	width:8px;
+	height:8px;
+}
+
+.have-read{
+	content:"";
+	border-radius:50%;
+	background-color:green;
+	display:inline-block;
+	width:8px;
+	height:8px;
+}
+
+.msg-content{
+	cursor:pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

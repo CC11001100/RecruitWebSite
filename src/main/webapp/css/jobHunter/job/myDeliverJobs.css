@@ -1,0 +1,21 @@
+/**
+ * 
+ * 我投递的职位页面用css
+ * 
+ */
+
+
+
+.job-name, .company-name, .resume-name{
+	color:black;
+}
+.job-name:hover, .company-name:hover, .resume-name:hover{
+	color:black;
+}
+
+
+
+
+
+
+

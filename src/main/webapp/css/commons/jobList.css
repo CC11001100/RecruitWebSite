@@ -1,0 +1,108 @@
+/**
+ * 
+ * 职位列表页用到的css
+ * 
+ */
+
+
+body{
+	background-color:#FDFDFD;
+}
+.condition-box{
+	width:500px;
+	margin:0px auto;
+	margin-top:30px;
+}
+.job-list{
+	width:800px;
+	margin:50px auto;
+}
+.job-list ul{
+}
+.job-list li{
+	list-style:none;
+	float:left;
+	display:inline-block;
+	width:100%;
+	padding:30px 50px;
+	/*border-bottom:1px #EEE solid;*/
+	background-color:white;
+}
+.job-list li:last-child{
+	/*border-bottom:none;*/
+}
+.job-list li:hover{
+	background-color:#F8F9FB;
+	border-radius:5px;
+}
+.job-info{
+	float:left;
+}
+.job-info>div{
+	margin:10px;
+}
+.job-info .job-name{
+	font-size:20px;
+	font-weight:400;
+	color:#000;
+}
+.job-info .salary{
+	font-size:20px;
+	color:#fc703e;
+}
+.job-info .misc span{
+	font-size:14px;
+}
+.job-info .misc span:after{
+	content:"|";
+	padding:10px;
+}
+.job-info .misc span:last-child:after{
+	content:none;
+}
+.job-info .release-time{
+	color:#D1D4DA;
+}
+.company-info{
+	float:right;
+	margin-top:15px;
+}
+.company-info .misc{
+	float:left;
+	margin-right:15px;
+	margin-top:8px;
+}
+.company-info .company-name{
+	font-size:18px;
+	color:#000;
+}
+.company-info .person-scale{
+	font-size:15px;
+	color:#D1D4DA;
+}
+.company-info .logo{
+	float:right;
+}
+.company-info .logo img{
+	width:60px;
+	height:60px;
+	border-radius:5px;
+}
+
+.noneResult{
+	text-align:center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+

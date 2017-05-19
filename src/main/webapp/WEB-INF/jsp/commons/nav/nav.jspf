@@ -1,0 +1,21 @@
+<!-- 
+
+	外面包含的时候使用这一个，用来隐藏复杂性
+
+ -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+
+		<c:choose>
+			<%--  求职者的导航栏  --%>
+			<c:when test="${user.userType==0}"><%@include file="/WEB-INF/jsp/commons/nav/jobHunterNav.jspf" %></c:when>
+			<%--  企业方的导航栏  --%>
+			<c:when test="${user.userType==1}"><%@include file="/WEB-INF/jsp/commons/nav/companyHrNav.jspf" %></c:when>
+			<%--  管理员的导航栏  --%>
+			<c:when test="${user.userType==2}"><%@include file="/WEB-INF/jsp/commons/nav/adminNav.jspf" %></c:when>
+			<%--  游客导航栏  --%>
+			<c:otherwise><%@include file="/WEB-INF/jsp/commons/nav/visitorNav.jspf" %></c:otherwise>
+		</c:choose>
+
+
+		

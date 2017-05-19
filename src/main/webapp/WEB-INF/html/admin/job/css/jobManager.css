@@ -1,0 +1,38 @@
+/**
+ * 
+ * 职位管理页面用到的css文件
+ * 
+ */
+
+
+
+
+#jobList tbody td{
+	height:30px;
+	line-height:30px;
+}
+
+.job-name, .job-name:hover, .company-name, .company-name:hover{
+	color:black
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,47 @@
+/**
+ * 
+ * 通用的css样式放在这里了
+ * 
+ */
+
+
+
+*{
+	font-family:"微软雅黑","arial,verdana,helvetica,'PingFang SC','HanHei SC',STHeitiSC-Light,Microsoft Yahei,sans-serif";
+}
+
+a:hover{
+	text-decoration:none;
+}
+
+/*用户菜单*/
+.user-menu{
+	float:right;
+	/* margin-right:70px; */
+}
+
+/*页脚的信息*/
+.footer{
+	/*-webkit-box-shadow:0 0 10px rgba(0, 204, 204, .5);  
+	-moz-box-shadow:0 0 10px rgba(0, 204, 204, .5);  
+	box-shadow:0 0 10px rgba(0, 204, 204, .5); */
+	border-top:1px #EEE solid;
+	height:30px;
+	text-align:center;
+	line-height:30px;
+}
+
+/*分页一直是固定大小并且居中的*/
+.paging{
+	width:400px;
+	margin:0px auto;
+}
+
+.user-avatar{
+	margin-left:8px;
+	margin-right:5px;
+	width:50px;
+	height:50px;
+	border-radius:50%;
+}
+

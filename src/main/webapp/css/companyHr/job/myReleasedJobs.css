@@ -1,0 +1,29 @@
+/**
+ * 
+ * 发布之类页面用到的css文件
+ * 
+ */
+
+
+
+
+.job-name, .company-name{
+	color:black;
+	text-decoration:none;
+}
+.job-name, .company-name:hover{
+	text-decoration:none;
+}
+
+
+#myReleaseJobList tbody td{
+	height:30p;
+	line-height:30px;
+}
+
+
+
+
+
+
+

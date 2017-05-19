@@ -1,0 +1,36 @@
+<!-- 
+
+	游客的导航栏
+
+ -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+		<!-- 导航栏 -->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="<c:url value="/indexEntry"/>">招聘网站</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li <c:if test="${1==active }">class="active"</c:if>>
+							<a href="<c:url value="/indexEntry"/>">首页</a>
+						</li>
+						<li <c:if test="${2==active }">class="active"</c:if>>
+							<a href="<c:url value="/common/jobListEntry"/>">职位列表</a>
+						</li>
+					</ul>
+					<!-- 登录后的快捷操作菜单 -->
+					<ul class="nav navbar-nav user-menu">
+						<li>
+							<a href="<c:url value="/visitor/loginEntry"/>">登录</a>
+						</li>
+						<li>
+							<a href="<c:url value="/visitor/registerEntry"/>">注册</a>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		
+		

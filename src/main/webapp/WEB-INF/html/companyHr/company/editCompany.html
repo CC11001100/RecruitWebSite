@@ -1,0 +1,180 @@
+<!--
+	作者：offline
+	时间：2017-05-10
+	描述：企业方-编辑公司资料
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>编辑公司资料</title>
+		<link rel="stylesheet" type="text/css" href="../../../plugins/bootstrap-3.3.5-dist/css/bootstrap-theme.css" />
+		<link rel="stylesheet" type="text/css" href="../../../plugins/bootstrap-3.3.5-dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../../../plugins/bootstrap-slider/css/bootstrap-slider.css"/>
+		<link rel="stylesheet" type="text/css" href="../../../plugins/bootstrap-fileinput/css/fileinput.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/commons.css" />
+		<link rel="stylesheet" type="text/css" href="css/createCompany.css" />
+	</head>
+
+	<body>
+
+		<!-- 导航栏 -->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">招聘网站</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li>
+							<a href="http://127.0.0.1:8020/JobNavigation/html/commons/jobList.html#">职位列表</a>
+						</li>
+						<li>
+							<a href="#">我的消息<span class="badge">42</span></a>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								我是企业方
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">我收到的简历</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="#">发布职位</a>
+								</li>
+								<li>
+									<a href="#">我发布的职位</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="#">创建公司</a>
+								</li>
+								<li>
+									<a href="#">我创建的公司</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- 登录后的快捷操作菜单 -->
+					<ul class="nav navbar-nav user-menu">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								用户名
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">我的信息</a>
+								</li>
+								<li>
+									<a id="logout" href="#">退出登录</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<!-- 面包屑 -->
+			<div>
+				<ol class="breadcrumb">
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">我是企业方</a>
+					</li>
+					<li class="active">编辑公司资料</li>
+				</ol>
+			</div>
+			<div class="">
+				<div>
+
+					<form class="form-horizontal" method="post" enctype="multipart/form-data" action="#">
+						<fieldset>
+
+							<div id="legend" class="">
+								<legend class="">编辑公司资料</legend>
+							</div>
+							
+							<div class="form-group">
+								<label for="name" class="col-sm-2 control-label">公司名：</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="name" name="name" placeholder="20字以内">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="person_scale" class="col-sm-2 control-label">人数规模：</label>
+								<div class="col-sm-10">
+									<b>创业公司</b>
+									<input id="person_scale" name="person_scale" type="text" class="" value="" data-slider-min="10" data-slider-max="1000" data-slider-step="1" data-slider-value="[100,500]"/>
+									<b>行业巨头</b>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="logo" class="col-sm-2 control-label">公司Logo：</label>
+								<div class="col-sm-10">
+									<!--<input type="text" class="form-control" id="logo" name="logo" placeholder="50字以内">-->
+										<input type="file" name="logo" id="logo" value="" placeholder="请上传公司logo"/>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="contact" class="col-sm-2 control-label">公司负责人联系方式：</label>
+								<div class="col-sm-10">
+									<input type="text" class="form-control" id="contact" name="contact" placeholder="请输入有效的联系方式，50字以内">
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="desc_content" class="col-sm-2 control-label">公司描述：</label>
+								<div class="col-sm-10">
+									<textarea type="text" class="form-control" id="desc_content" name="desc_content" placeholder="请输入职位描述，3000字以内"></textarea>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<div class="col-sm-4 col-lg-offset-5">
+									<button class="btn btn-success" type="submit">创建公司</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+									<button class="btn btn-success" type="reset">重置</button>
+								</div>
+							</div>
+							
+							<div class="control-group">
+								<div class="controls">
+									
+								</div>
+							</div>
+
+						</fieldset>
+					</form>
+
+				</div>
+			</div>
+
+			<!-- 页脚 -->
+			<div class="footer">
+				©版权所有
+			</div>
+
+			<script type="text/javascript" src="../../../plugins/jquery/jquery-2.2.3.js"></script>
+			<script type="text/javascript" src="../../../plugins/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+			<script type="text/javascript" src="../../../plugins/bootstrap-slider/js/bootstrap-slider.js"></script>
+			<script type="text/javascript" src="../../../plugins/layer/layer.js"></script>
+			<script type="text/javascript" src="../../../plugins/bootstrap-fileinput/js/fileinput.js"></script>
+			<script type="text/javascript" src="../../../js/commons.js"></script>
+			<script type="text/javascript" src="js/createCompany.js"></script>
+	</body>
+
+</html>

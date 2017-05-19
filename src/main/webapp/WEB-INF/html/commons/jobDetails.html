@@ -1,0 +1,301 @@
+<!--
+	作者：offline
+	时间：2017-05-10
+	描述：职位详情页
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>职位名称</title>
+		<link rel="stylesheet" type="text/css" href="../../plugins/bootstrap-3.3.5-dist/css/bootstrap-theme.css" />
+		<link rel="stylesheet" type="text/css" href="../../plugins/bootstrap-3.3.5-dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../../css/commons.css" />
+		<link rel="stylesheet" type="text/css" href="css/jobDetails.css" />
+	</head>
+
+	<body>
+
+		<!-- 导航栏 -->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">招聘网站</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li class="active">
+							<a href="http://127.0.0.1:8020/JobNavigation/html/commons/jobList.html#">职位列表</a>
+						</li>
+						<li>
+							<a href="#">我的消息</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								我是求职者
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">我的简历</a>
+								</li>
+								<li>
+									<a href="#">我投递的职位</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- 登录后的快捷操作菜单 -->
+					<ul class="nav navbar-nav user-menu">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								用户名
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">我的信息</a>
+								</li>
+								<li>
+									<a id="logout" href="#">退出登录</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<!-- 详情头 -->
+		<div class="detail-header container">
+			<!-- 职位描述 -->
+			<div class="job-detail">
+				<!-- 发布时间 -->
+				<div class="release-time"><span class="glyphicon glyphicon-time"/>&nbsp;<span>发布于昨天</span></div>
+				<div>
+					<span title="" class="job-name">Java研发</span>
+					<span title="" class="salary">7K~10K</span>
+				</div>
+				<div class="misc">
+					<!-- 工作位置 -->
+					<span title="" class="location">北京</span>
+					<!-- 工作经验要求-->
+					<span title="" class="work-experience">1-3年</span>
+					<!-- 学历要求 -->
+					<span title="" class="education-require">本科</span>
+				</div>
+			</div>
+			<!-- 所属公司描述 -->
+			<div class="company-detail">
+				<div class="misc">
+					<div>
+						<span title="" class="company-name"><a href="#">公司名</a></span>
+					</div>
+					<div>
+						<span title="" class="person-scale">50~100人</span><br />
+					</div>
+					<div>
+						<span title="" class="company-brief">公司简介公司简介公司简介公司简介公司简介</span>
+					</div>
+				</div>
+				<div class="logo">
+					<a href="#"><img src="https://img.bosszhipin.com/beijin/mcs/bar/brand/104648.jpg" alt="" /></a>
+				</div>
+			</div>
+		</div>
+		<!-- 详情具体描述 -->
+		<div class="detail-desc container">
+			<!-- 职位详情 -->
+			<div class="job-details">
+				<div class="release-user-info">
+					<img src="https://img2.bosszhipin.com/boss/avatar/avatar_1.png" alt="" class="user-avatar" />
+					<span class="user-name">李小白</span>
+					<span class="contact">13791486931</span>
+				</div>
+				<div class="desc_content">
+					<p class="title">职位描述：</p>
+					<p>职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述职位内容描述</p>
+				</div>
+				<div class="operation-btn">
+					<button id="deliverMyResume" type="button" class="btn btn-success">投递我的简历</button>
+				</div>
+			</div>
+			<!-- 其它职位 -->
+			<div class="other-job">
+				<div class="title">
+					<h3 class="title">其它职位<span class="more-job-link"><a href="http://127.0.0.1:8020/JobNavigation/html/commons/jobList.html#">更多职位></a></span></h3>
+				</div>
+				<div class="content">
+					<ul>
+						<li>
+							<div class="desc">
+								<div>
+									<a  href="#" title="" class="job-name">Java开发</a>
+									<span title="" class="salary">5K~10K</span>
+								</div>
+								<div>
+									<span title="" class="company">公司名称</span>
+									<span title="" class="location">工作位置</span>
+								</div>
+							</div>
+							<div class="logo">
+								<a href="#"><img src="https://img.bosszhipin.com/beijin/mcs/bar/brand/109.jpg" alt="" /></a>
+							</div>
+						</li>
+						<li>
+							<div class="desc">
+								<div>
+									<a  href="#" title="" class="job-name">Java开发</a>
+									<span title="" class="salary">5K~10K</span>
+								</div>
+								<div>
+									<span title="" class="company">公司名称</span>
+									<span title="" class="location">工作位置</span>
+								</div>
+							</div>
+							<div class="logo">
+								<img src="https://img.bosszhipin.com/beijin/mcs/bar/brand/109.jpg" alt="" />
+							</div>
+						</li>
+						<li>
+							<div class="desc">
+								<div>
+									<a  href="#" title="" class="job-name">Java开发</a>
+									<span title="" class="salary">5K~10K</span>
+								</div>
+								<div>
+									<span title="" class="company">公司名称</span>
+									<span title="" class="location">工作位置</span>
+								</div>
+							</div>
+							<div class="logo">
+								<img src="https://img.bosszhipin.com/beijin/mcs/bar/brand/109.jpg" alt="" />
+							</div>
+						</li>
+						<li>
+							<div class="desc">
+								<div>
+									<a  href="#" title="" class="job-name">Java开发</a>
+									<span title="" class="salary">5K~10K</span>
+								</div>
+								<div>
+									<span title="" class="company">公司名称</span>
+									<span title="" class="location">工作位置</span>
+								</div>
+							</div>
+							<div class="logo">
+								<img src="https://img.bosszhipin.com/beijin/mcs/bar/brand/109.jpg" alt="" />
+							</div>
+						</li>
+						<li>
+							<div class="desc">
+								<div>
+									<a  href="#" title="" class="job-name">Java开发</a>
+									<span title="" class="salary">5K~10K</span>
+								</div>
+								<div>
+									<span title="" class="company">公司名称</span>
+									<span title="" class="location">工作位置</span>
+								</div>
+							</div>
+							<div class="logo">
+								<img src="https://img.bosszhipin.com/beijin/mcs/bar/brand/109.jpg" alt="" />
+							</div>
+						</li>
+						<li>
+							<div class="desc">
+								<div>
+									<a  href="#" title="" class="job-name">Java开发</a>
+									<span title="" class="salary">5K~10K</span>
+								</div>
+								<div>
+									<span title="" class="company">公司名称</span>
+									<span title="" class="location">工作位置</span>
+								</div>
+							</div>
+							<div class="logo">
+								<img src="https://img.bosszhipin.com/beijin/mcs/bar/brand/109.jpg" alt="" />
+							</div>
+						</li>
+						<li>
+							<div class="desc">
+								<div>
+									<a  href="#" title="" class="job-name">Java开发</a>
+									<span title="" class="salary">5K~10K</span>
+								</div>
+								<div>
+									<span title="" class="company">公司名称</span>
+									<span title="" class="location">工作位置</span>
+								</div>
+							</div>
+							<div class="logo">
+								<img src="https://img.bosszhipin.com/beijin/mcs/bar/brand/109.jpg" alt="" />
+							</div>
+						</li>
+						<li>
+							<div class="desc">
+								<div>
+									<a  href="#" title="" class="job-name">Java开发</a>
+									<span title="" class="salary">5K~10K</span>
+								</div>
+								<div>
+									<span title="" class="company">公司名称</span>
+									<span title="" class="location">工作位置</span>
+								</div>
+							</div>
+							<div class="logo">
+								<img src="https://img.bosszhipin.com/beijin/mcs/bar/brand/109.jpg" alt="" />
+							</div>
+						</li>
+						<li>
+							<div class="desc">
+								<div>
+									<a  href="#" title="" class="job-name">Java开发</a>
+									<span title="" class="salary">5K~10K</span>
+								</div>
+								<div>
+									<span title="" class="company">公司名称</span>
+									<span title="" class="location">工作位置</span>
+								</div>
+							</div>
+							<div class="logo">
+								<img src="https://img.bosszhipin.com/beijin/mcs/bar/brand/109.jpg" alt="" />
+							</div>
+						</li>
+						<li>
+							<div class="desc">
+								<div>
+									<a  href="#" title="" class="job-name">Java开发</a>
+									<span title="" class="salary">5K~10K</span>
+								</div>
+								<div>
+									<span title="" class="company">公司名称</span>
+									<span title="" class="location">工作位置</span>
+								</div>
+							</div>
+							<div class="logo">
+								<img src="https://img.bosszhipin.com/beijin/mcs/bar/brand/109.jpg" alt="" />
+							</div>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		
+		<!-- 页脚 -->
+		<div class="footer">
+			©版权所有
+		</div>
+
+		<script type="text/javascript" src="../../plugins/jquery/jquery-2.2.3.js"></script>
+		<script type="text/javascript" src="../../plugins/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+		<script type="text/javascript" src="../../plugins/layer/layer.js"></script>
+		<script type="text/javascript" src="../../js/commons.js"></script>
+		<script type="text/javascript" src="js/jobDetails.js"></script>
+	</body>
+
+</html>

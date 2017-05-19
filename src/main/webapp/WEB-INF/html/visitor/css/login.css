@@ -1,0 +1,12 @@
+/**
+ * 
+ * 登录页面用到的css文件
+ * 
+ */
+
+
+#authCodeImage{
+	width:100px;
+	height:100px;
+	cursor:pointer;
+}

@@ -1,0 +1,64 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<div class="paging">
+		<nav aria-label="Page navigation">
+			<ul class="pagination">
+			
+			<!-- 当前页不为第一页时显示前一页 -->
+			<c:if test="${page.pageNumber!=1 && page.totalPage>1 }">
+				<li>
+					<a href="<c:url value="${paginationLocation }?pageNumber=${page.pageNumber-1 }${paginationParams ? '&'+paginationParams : '' }"/>" aria-label="Previous">
+						<span aria-hidden="true">&laquo;</span>
+					</a>
+				</li>
+			</c:if>
+			
+			<%-- 根据不同的情况显示分页 --%>
+			<c:choose>
+			
+				<%-- 当总页数大于1时才显示分页按钮 --%>
+				<c:when test="${page.totalPage<=1 }">
+				</c:when>
+				
+				<%-- 当前页<=3 && <=total-3，普通显示 --%>
+				<c:when test="${page.pageNumber>=3 && page.totalPage-page.pageNumber>=3 }">
+					<c:forEach begin="${page.pageNumber-2 }" end="${page.pageNumber+2 }" var="index">
+						<li <c:if test="${page.pageNumber==index }">class="active"</c:if>>
+							<a href="<c:url value="${paginationLocation }?pageNumber=${index }${paginationParams ? '&'+paginationParams : '' }"/>">${index }</a>
+						</li>
+					</c:forEach>
+				</c:when>
+				
+				<%--  当<3时显示 --%>
+				<c:when test="${page.pageNumber<3 }">
+					<c:forEach begin="1" end="${page.totalPage<5 ? page.totalPage : 5 }" var="index">
+						<li <c:if test="${page.pageNumber==index }">class="active"</c:if>>
+							<a href="<c:url value="${paginationLocation }?pageNumber=${index }${paginationParams ? '&'+paginationParams : '' }"/>">${index }</a>
+						</li>
+					</c:forEach>
+				</c:when>
+				
+				<%-- 当>=totalPage-2，显示最后5页 --%>
+				<c:when test="${page.totalPage-page.pageNumber<3}">
+					<c:forEach begin="${(page.totalPage-5<1) ? 1 : (page.totalPage-5) }" end="${page.totalPage }" var="index">
+						<li <c:if test="${page.pageNumber==index }">class="active"</c:if>>
+							<a href="<c:url value="${paginationLocation }?pageNumber=${index }${paginationParams ? '&'+paginationParams : '' }"/>">${index }</a>
+						</li>
+					</c:forEach>
+				</c:when>
+				
+			</c:choose>
+			
+			<!-- 当不为最后一页时显示下一页按钮 -->
+			<c:if test="${page.pageNumber!=page.totalPage && page.totalPage>1}">
+				<li>
+					<a href="<c:url value="${paginationLocation }?pageNumber=${page.pageNumber+1 }${paginationParams ? '&'+paginationParams : '' }"/>" aria-label="Next">
+						<span aria-hidden="true">&raquo;</span>
+					</a>
+				</li>
+			</c:if>
+			
+		</ul>
+	</nav>
+</div>

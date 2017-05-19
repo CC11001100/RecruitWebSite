@@ -1,0 +1,322 @@
+<!--
+	作者：offline
+	时间：2017-05-10
+	描述：管理员-职位管理
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>职位管理</title>
+		<link rel="stylesheet" type="text/css" href="../../../plugins/bootstrap-3.3.5-dist/css/bootstrap-theme.css" />
+		<link rel="stylesheet" type="text/css" href="../../../plugins/bootstrap-3.3.5-dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../../../plugins/bootstrap-slider/css/bootstrap-slider.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/commons.css" />
+		<link rel="stylesheet" type="text/css" href="css/jobManager.css"/>
+	</head>
+
+	<body>
+
+		<!-- 导航栏 -->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">招聘网站</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li>
+							<a href="http://127.0.0.1:8020/JobNavigation/html/commons/jobList.html#">职位列表</a>
+						</li>
+						<li>
+							<a href="#">我的消息<span class="badge">42</span></a>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								我是企业方
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">我收到的简历</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="#">发布职位</a>
+								</li>
+								<li>
+									<a href="#">我发布的职位</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="#">创建公司</a>
+								</li>
+								<li>
+									<a href="#">我创建的公司</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- 登录后的快捷操作菜单 -->
+					<ul class="nav navbar-nav user-menu">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								用户名
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">我的信息</a>
+								</li>
+								<li>
+									<a id="logout" href="#">退出登录</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<!-- 面包屑 -->
+			<div>
+				<ol class="breadcrumb">
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">我是管理员</a>
+					</li>
+					<li class="active">职位管理</li>
+				</ol>
+			</div>
+			<div class="">
+				<div>
+
+					<form class="form-horizontal">
+						<fieldset>
+
+							<div id="legend" class="">
+								<legend class="">职位管理</legend>
+							</div>
+
+							<table class="table table-hover" id="jobList">
+								<thead>
+									<tr>
+										<th>职位名称</th>
+										<th>关联公司</th>
+										<th>发布时间</th>
+										<th>收到简历</th>
+										<th>操作</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td>
+											<a target="_blank" href="http://127.0.0.1:8020/JobNavigation/html/commons/jobDetails.html" class="job-name">图书管理员</a>
+										</td>
+										<td>
+											<a target="_blank" href="#" class="company-name">浙大图书馆</a>
+										</td>
+										<td>2017-5-11 12:16:46</td>
+										<td>10</td>
+										<td>
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-sm" name="delBtn">删除</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a target="_blank" href="http://127.0.0.1:8020/JobNavigation/html/commons/jobDetails.html" class="job-name">图书管理员</a>
+										</td>
+										<td>
+											<a target="_blank" href="#" class="company-name">浙大图书馆</a>
+										</td>
+										<td>2017-5-11 12:16:46</td>
+										<td>10</td>
+										<td>
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-sm" name="delBtn">删除</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a target="_blank" href="http://127.0.0.1:8020/JobNavigation/html/commons/jobDetails.html" class="job-name">图书管理员</a>
+										</td>
+										<td>
+											<a target="_blank" href="#" class="company-name">浙大图书馆</a>
+										</td>
+										<td>2017-5-11 12:16:46</td>
+										<td>10</td>
+										<td>
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-sm" name="delBtn">删除</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a target="_blank" href="http://127.0.0.1:8020/JobNavigation/html/commons/jobDetails.html" class="job-name">图书管理员</a>
+										</td>
+										<td>
+											<a target="_blank" href="#" class="company-name">浙大图书馆</a>
+										</td>
+										<td>2017-5-11 12:16:46</td>
+										<td>10</td>
+										<td>
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-sm" name="delBtn">删除</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a target="_blank" href="http://127.0.0.1:8020/JobNavigation/html/commons/jobDetails.html" class="job-name">图书管理员</a>
+										</td>
+										<td>
+											<a target="_blank" href="#" class="company-name">浙大图书馆</a>
+										</td>
+										<td>2017-5-11 12:16:46</td>
+										<td>10</td>
+										<td>
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-sm" name="delBtn">删除</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a target="_blank" href="http://127.0.0.1:8020/JobNavigation/html/commons/jobDetails.html" class="job-name">图书管理员</a>
+										</td>
+										<td>
+											<a target="_blank" href="#" class="company-name">浙大图书馆</a>
+										</td>
+										<td>2017-5-11 12:16:46</td>
+										<td>10</td>
+										<td>
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-sm" name="delBtn">删除</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a target="_blank" href="http://127.0.0.1:8020/JobNavigation/html/commons/jobDetails.html" class="job-name">图书管理员</a>
+										</td>
+										<td>
+											<a target="_blank" href="#" class="company-name">浙大图书馆</a>
+										</td>
+										<td>2017-5-11 12:16:46</td>
+										<td>10</td>
+										<td>
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-sm" name="delBtn">删除</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a target="_blank" href="http://127.0.0.1:8020/JobNavigation/html/commons/jobDetails.html" class="job-name">图书管理员</a>
+										</td>
+										<td>
+											<a target="_blank" href="#" class="company-name">浙大图书馆</a>
+										</td>
+										<td>2017-5-11 12:16:46</td>
+										<td>10</td>
+										<td>
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-sm" name="delBtn">删除</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a target="_blank" href="http://127.0.0.1:8020/JobNavigation/html/commons/jobDetails.html" class="job-name">图书管理员</a>
+										</td>
+										<td>
+											<a target="_blank" href="#" class="company-name">浙大图书馆</a>
+										</td>
+										<td>2017-5-11 12:16:46</td>
+										<td>10</td>
+										<td>
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-sm" name="delBtn">删除</button>
+											</div>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<a target="_blank" href="http://127.0.0.1:8020/JobNavigation/html/commons/jobDetails.html" class="job-name">图书管理员</a>
+										</td>
+										<td>
+											<a target="_blank" href="#" class="company-name">浙大图书馆</a>
+										</td>
+										<td>2017-5-11 12:16:46</td>
+										<td>10</td>
+										<td>
+											<div class="btn-group">
+												<button type="button" class="btn btn-success btn-sm" name="delBtn">删除</button>
+											</div>
+										</td>
+									</tr>
+									
+								</tbody>
+							</table>
+							<div class="paging">
+								<nav aria-label="Page navigation">
+									<ul class="pagination">
+										<li>
+											<a href="#" aria-label="Previous">
+												<span aria-hidden="true">&laquo;</span>
+											</a>
+										</li>
+										<li>
+											<a href="#">1</a>
+										</li>
+										<li>
+											<a href="#">2</a>
+										</li>
+										<li>
+											<a href="#">3</a>
+										</li>
+										<li>
+											<a href="#">4</a>
+										</li>
+										<li>
+											<a href="#">5</a>
+										</li>
+										<li>
+											<a href="#" aria-label="Next">
+												<span aria-hidden="true">&raquo;</span>
+											</a>
+										</li>
+									</ul>
+								</nav>
+							</div>
+						</fieldset>
+					</form>
+
+				</div>
+			</div>
+
+			<!-- 页脚 -->
+			<div class="footer">
+				©版权所有
+			</div>
+
+			<script type="text/javascript" src="../../../plugins/jquery/jquery-2.2.3.js"></script>
+			<script type="text/javascript" src="../../../plugins/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+			<script type="text/javascript" src="../../../plugins/bootstrap-slider/js/bootstrap-slider.js"></script>
+			<script type="text/javascript" src="../../../plugins/layer/layer.js"></script>
+			<script type="text/javascript" src="../../../js/commons.js"></script>
+			<script type="text/javascript" src="js/jobManager.js"></script>
+	</body>
+
+</html>

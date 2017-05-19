@@ -1,0 +1,67 @@
+<!-- 
+
+	求职者的导航栏
+
+ -->
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
+		<!-- 导航栏 -->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="<c:url value="/indexEntry"/>">招聘网站</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li <c:if test="${1==active }">class="active"</c:if>>
+							<a href="<c:url value="/indexEntry"/>">首页</a>
+						</li>
+						<li <c:if test="${2==active }">class="active"</c:if>>
+							<a href="<c:url value="/common/jobListEntry"/>">职位列表</a>
+						</li>
+						<li <c:if test="${3==active }">class="active"</c:if>>
+							<a href="<c:url value="/common/msgListEntry"/>">我的消息
+								<c:set var="unreadMsgCount" value="${user.unreadMsgCount }" />
+								<c:if test="${unreadMsgCount!=0 }"><span class="badge">${unreadMsgCount }</span></c:if>
+							</a>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								我是求职者
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="<c:url value="/jobHunter/myResumeEntry"/>">我的简历</a>
+								</li>
+								<li>
+									<a href="<c:url value="/jobHunter/myDeliverJobsEntry"/>">我投递的职位</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- 登录后的快捷操作菜单 -->
+					<ul class="nav navbar-nav user-menu">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								${user.nickname }
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="<c:url value="/common/userInfoEntry"/>">我的信息</a>
+								</li>
+								<li>
+									<a id="logout" href="#">退出登录</a>
+								</li>
+							</ul>
+						</li>
+						<!-- 用户头像 -->
+						<li>
+							<img src="<c:url value="/file/showPic?name=${user.avatar}"/>" class="user-avatar"/>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		

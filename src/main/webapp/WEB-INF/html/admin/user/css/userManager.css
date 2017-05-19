@@ -1,0 +1,38 @@
+/**
+ * 
+ * 用户管理页面用到的css
+ * 
+ */
+
+
+
+
+
+.avatar{
+	width:50px;
+	height:50px;
+	border-radius:50%;
+}
+
+#userList tbody tr td{
+	height::50px;
+	line-height:50px;
+}
+
+.my-resume{
+	color:black;
+}
+.my-resume:hover{
+	color:black;
+}
+
+
+
+
+
+
+
+
+
+
+

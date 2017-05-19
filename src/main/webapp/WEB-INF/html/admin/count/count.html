@@ -1,0 +1,140 @@
+<!--
+	作者：offline
+	时间：2017-05-11
+	描述：管理员-统计数据
+-->
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title>统计数据</title>
+		<link rel="stylesheet" type="text/css" href="../../../plugins/bootstrap-3.3.5-dist/css/bootstrap-theme.css" />
+		<link rel="stylesheet" type="text/css" href="../../../plugins/bootstrap-3.3.5-dist/css/bootstrap.css" />
+		<link rel="stylesheet" type="text/css" href="../../../plugins/bootstrap-slider/css/bootstrap-slider.css" />
+		<link rel="stylesheet" type="text/css" href="../../../css/commons.css" />
+	</head>
+
+	<body>
+
+		<!-- 导航栏 -->
+		<nav class="navbar navbar-default" role="navigation">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="#">招聘网站</a>
+				</div>
+				<div>
+					<ul class="nav navbar-nav">
+						<li>
+							<a href="#">首页</a>
+						</li>
+						<li>
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								我是管理员
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a href="#">用户管理</a>
+								</li>
+								<li>
+									<a href="#">职位管理</a>
+								</li>
+								<li>
+									<a href="#">公司管理</a>
+								</li>
+								<li role="separator" class="divider"></li>
+								<li>
+									<a href="#">统计数据</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+					<!-- 登录后的快捷操作菜单 -->
+					<ul class="nav navbar-nav user-menu">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								用户名
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+								<li>
+									<a id="logout" href="#">退出登录</a>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+
+		<div class="container">
+			<!-- 面包屑 -->
+			<div>
+				<ol class="breadcrumb">
+					<li>
+						<a href="#">首页</a>
+					</li>
+					<li>
+						<a href="#">我是管理员</a>
+					</li>
+					<li class="active">统计数据</li>
+				</ol>
+			</div>
+			<div class="">
+				<div>
+
+					<form class="form-horizontal">
+						<fieldset>
+
+							<div id="legend" class="">
+								<legend class="">当前平台统计数据</legend>
+							</div>
+							
+							<div class="form-group">
+								<label for="contact" class="col-sm-2 control-label">当前在线人数：</label>
+								<div class="col-sm-10">
+									<p class="form-control-static">100人</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="contact" class="col-sm-2 control-label">总注册人数：</label>
+								<div class="col-sm-10">
+									<p class="form-control-static">100人</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="contact" class="col-sm-2 control-label">总职位数：</label>
+								<div class="col-sm-10">
+									<p class="form-control-static">100人</p>
+								</div>
+							</div>
+							
+							<div class="form-group">
+								<label for="contact" class="col-sm-2 control-label">总公司数：</label>
+								<div class="col-sm-10">
+									<p class="form-control-static">100人</p>
+								</div>
+							</div>
+
+						</fieldset>
+					</form>
+
+				</div>
+			</div>
+
+			<!-- 页脚 -->
+			<div class="footer">
+				©版权所有
+			</div>
+
+			<script type="text/javascript" src="../../../plugins/jquery/jquery-2.2.3.js"></script>
+			<script type="text/javascript" src="../../../plugins/bootstrap-3.3.5-dist/js/bootstrap.js"></script>
+			<script type="text/javascript" src="../../../plugins/bootstrap-slider/js/bootstrap-slider.js"></script>
+			<script type="text/javascript" src="../../../plugins/layer/layer.js"></script>
+			<script type="text/javascript" src="../../../js/commons.js"></script>
+	</body>
+
+</html>
